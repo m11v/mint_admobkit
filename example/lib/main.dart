@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mint_admobkit/mint_admobkit.dart';
 
-void main() {
+import 'example_ad_provider.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  ExampleAdProvider.getInstance().initializeMobileAdsOnMobile();
+
   runApp(const MyApp());
 }
 
@@ -33,6 +39,11 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          AdBanner(
+            padding: const EdgeInsets.symmetric(vertical: 50),
+            type: const ExampleTopBannerAndroid(unitId: AdIdProvider.mockAdId),
+            adIdProvider: ExampleAdProvider.getInstance(),
+          ),
           Container(
             color: Theme.of(context).colorScheme.primaryContainer,
             padding: const EdgeInsets.all(20),
