@@ -3,6 +3,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'mint_admobkit.dart';
 
+/// The widget to show a banner ad
 class AdBanner extends StatefulWidget {
   const AdBanner({
     super.key,

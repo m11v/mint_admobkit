@@ -2,7 +2,7 @@
 
 Example app for mint_admobkit package
 
-### Integrate Admob on Android
+### Integrate AdMob on Android
 1. Update AndroidManifest.xml:
   - Add permissions before `<application`:
     ```xml
