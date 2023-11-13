@@ -1,0 +1,23 @@
+name: example_mint
+description: An example app for mint_admobkit package.
+publish_to: 'none'
+
+version: 0.0.1
+
+environment:
+  sdk: '>=3.1.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  mint_admobkit:
+    path: ../../mint_admobkit
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
