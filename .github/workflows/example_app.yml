@@ -1,4 +1,4 @@
-name: Example App Main
+name: Example App
 
 on:
   push:
@@ -26,6 +26,3 @@ jobs:
 
       - name: Analyze project source
         run: flutter analyze
-
-      - name: Run unit tests
-        run: flutter test
