@@ -4,6 +4,8 @@ A set of AdMob integration utils for [MintMinter](https://play.google.com/store/
 
 [![License](https://img.shields.io/github/license/m11v/mint_admobkit)](https://github.com/m11v/mint_admobkit/blob/main/LICENSE)
 [![Flutter CI](https://github.com/m11v/mint_admobkit/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/m11v/mint_admobkit)
+[![Pub](https://img.shields.io/pub/v/mint_admobkit?label=Pub)](https://pub.dev/packages/mint_admobkit)
+[![Package publisher](https://img.shields.io/pub/publisher/mint_admobkit.svg)](https://pub.dev/packages/mint_admobkit/publisher)
 
 - AdBanner: show a banner ad
 - AdIdProvider: provide ids for different ad type
