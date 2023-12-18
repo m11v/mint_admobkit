@@ -8,6 +8,7 @@ A set of AdMob integration utils for [MintMinter](https://play.google.com/store/
 [![Package publisher](https://img.shields.io/pub/publisher/mint_admobkit.svg)](https://pub.dev/packages/mint_admobkit/publisher)
 
 - AdBanner: show a banner ad
+- SimpleAdBanner: show a banner ad simple
 - AdIdProvider: provide ids for different ad type
 - AdType: defines ad type
 
