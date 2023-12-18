@@ -6,3 +6,6 @@
 
 ## 1.1.0
 * Add `SimpleAdBanner`.
+
+## 1.1.1
+* Upgrade dependencies.
