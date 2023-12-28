@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mint_admobkit/mint_admobkit.dart';
 
@@ -5,7 +8,8 @@ import 'example_ad_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  ExampleAdProvider.getInstance().initializeMobileAdsOnMobile();
+
+  unawaited(ExampleAdProvider.getInstance().initializeMobileAdsOnMobile());
 
   runApp(const MyApp());
 }
@@ -43,11 +47,31 @@ class HomePage extends StatelessWidget {
             type: const ExampleTopBannerAndroid(unitId: AdIdProvider.mockAdId),
             adIdProvider: ExampleAdProvider.getInstance(),
           ),
+          if (kDebugMode) ...[
+            InkWell(
+              child: Container(
+                color: Theme.of(context).colorScheme.primaryContainer,
+                padding: const EdgeInsets.all(20),
+                child: Text(
+                  'Reset Consent Information',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  ),
+                ),
+              ),
+              onTap: () {
+                ExampleAdProvider.getInstance().resetConsentInformation();
+              },
+            )
+          ],
+          const SizedBox(
+            height: 20,
+          ),
           Container(
             color: Theme.of(context).colorScheme.primaryContainer,
             padding: const EdgeInsets.all(20),
             child: Text(
-              'Test Ad Demo',
+              'Other content',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
               ),

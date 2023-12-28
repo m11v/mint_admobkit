@@ -9,3 +9,6 @@
 
 ## 1.1.1
 * Upgrade dependencies.
+
+## 1.2.0
+* Integrate consent information.
