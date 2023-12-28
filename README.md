@@ -26,6 +26,11 @@ A set of AdMob integration utils for [MintMinter](https://play.google.com/store/
   <meta-data
       android:name="com.google.android.gms.ads.APPLICATION_ID"
       android:value="ca-app-pub-3940256099942544~3347511713"/>
+  
+  <!-- Delay app measurement until MobileAds.initialize() is called. See https://developers.google.com/admob/flutter/eu-consent#delay_app_measurement_optional -->
+  <meta-data
+      android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
+      android:value="true"/>
   ```
 2. Add an ad provider:
 ```dart

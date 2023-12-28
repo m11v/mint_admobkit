@@ -1,6 +1,6 @@
 name: mint_admobkit
 description: The flutter package including a set of AdMob integration utils for MintMinter apps
-version: 1.1.1
+version: 1.2.0
 homepage: https://github.com/m11v/mint_admobkit
 repository: https://github.com/m11v/mint_admobkit
 
