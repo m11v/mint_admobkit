@@ -11,6 +11,7 @@ A set of AdMob integration utils for [MintMinter](https://play.google.com/store/
 - SimpleAdBanner: show a banner ad simple
 - AdIdProvider: provide ids for different ad type
 - AdType: defines ad type
+- AttView: Show ATT request on iOS
 
 ## Usage
 ### Integrate AdMob on Android
