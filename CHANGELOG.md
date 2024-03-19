@@ -12,3 +12,6 @@
 
 ## 1.2.0
 * Integrate consent information.
+
+## 1.3.0
+* Add `AttView`
