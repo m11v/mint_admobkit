@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,9 @@ import 'example_ad_provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  unawaited(ExampleAdProvider.getInstance().initializeMobileAdsOnMobile());
+  unawaited(ExampleAdProvider.getInstance().initializeMobileAdsOnMobile(
+    requireEuConsent: !kIsWeb && Platform.isAndroid,
+  ));
 
   runApp(const MyApp());
 }

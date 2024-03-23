@@ -12,49 +12,56 @@ abstract class AdIdProvider {
   static const mockAdId = 'mock_id';
 
   /// Initialize MobileAds on mobile
-  Future<void> initializeMobileAdsOnMobile() async {
+  Future<void> initializeMobileAdsOnMobile({
+    required bool requireEuConsent,
+  }) async {
     if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
       /// Initialize MobileAds first,
       /// discussion: https://groups.google.com/g/google-admob-ads-sdk/c/HB3ApoxDnWs/m/7Lq2MOuPBAAJ
       await MobileAds.instance.initialize();
 
-      /// Create debug params, see https://developers.google.com/admob/flutter/eu-consent#testing
-      /// For example:
-      /// ConsentDebugSettings debugSettings = ConsentDebugSettings(
-      ///     debugGeography: DebugGeography.debugGeographyEea,
-      ///     testIdentifiers: ['1FA151D7EFD6EA233C2AD95E1FB9175C'],
-      /// );
-      /// final params = ConsentRequestParameters(
-      ///   consentDebugSettings: debugSettings,
-      /// );
-      /// To get the the device id in testIdentifiers, search `ConsentDebugSettings.Builder().addTestDeviceHashedId` in terminal.
-      final params = ConsentRequestParameters();
-      ConsentInformation.instance.requestConsentInfoUpdate(params, () async {
-        final isConsentFormAvailable =
-            await ConsentInformation.instance.isConsentFormAvailable();
-        if (isConsentFormAvailable) {
-          final consentStatus =
-              await ConsentInformation.instance.getConsentStatus();
-          debugPrint('👉👉👉👉👉 consent status = $consentStatus');
-          if (consentStatus == ConsentStatus.required) {
-            ConsentForm.loadConsentForm(
-              (ConsentForm consentForm) async {
-                var status =
-                    await ConsentInformation.instance.getConsentStatus();
-                if (status == ConsentStatus.required) {
-                  consentForm.show(
-                    (_) {},
-                  );
-                }
-              },
-              (_) {},
-            );
-          }
-        } else {
-          debugPrint('👉👉👉👉👉 consent form is unavailable');
-        }
-      }, (_) {});
+      if (requireEuConsent) {
+        setEUConsent();
+      }
     }
+  }
+
+  Future<void> setEUConsent() async {
+    /// Create debug params, see https://developers.google.com/admob/flutter/eu-consent#testing
+    /// For example:
+    /// ConsentDebugSettings debugSettings = ConsentDebugSettings(
+    ///     debugGeography: DebugGeography.debugGeographyEea,
+    ///     testIdentifiers: ['1FA151D7EFD6EA233C2AD95E1FB9175C'],
+    /// );
+    /// final params = ConsentRequestParameters(
+    ///   consentDebugSettings: debugSettings,
+    /// );
+    /// To get the the device id in testIdentifiers, search `ConsentDebugSettings.Builder().addTestDeviceHashedId` in terminal.
+    final params = ConsentRequestParameters();
+    ConsentInformation.instance.requestConsentInfoUpdate(params, () async {
+      final isConsentFormAvailable =
+          await ConsentInformation.instance.isConsentFormAvailable();
+      if (isConsentFormAvailable) {
+        final consentStatus =
+            await ConsentInformation.instance.getConsentStatus();
+        debugPrint('👉👉👉👉👉 consent status = $consentStatus');
+        if (consentStatus == ConsentStatus.required) {
+          ConsentForm.loadConsentForm(
+            (ConsentForm consentForm) async {
+              var status = await ConsentInformation.instance.getConsentStatus();
+              if (status == ConsentStatus.required) {
+                consentForm.show(
+                  (_) {},
+                );
+              }
+            },
+            (_) {},
+          );
+        }
+      } else {
+        debugPrint('👉👉👉👉👉 consent form is unavailable');
+      }
+    }, (_) {});
   }
 
   Future<void> resetConsentInformation() async {

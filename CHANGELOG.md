@@ -15,3 +15,6 @@
 
 ## 1.3.0
 * Add `AttView`
+
+## 1.3.1
+* Add parameter to control if require EU consent or not.
