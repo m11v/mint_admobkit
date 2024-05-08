@@ -18,3 +18,6 @@
 
 ## 1.3.1
 * Add parameter to control if require EU consent or not.
+
+## 1.3.2
+* Upgrade `google_mobile_ads`
