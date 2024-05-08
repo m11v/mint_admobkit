@@ -20,4 +20,4 @@
 * Add parameter to control if require EU consent or not.
 
 ## 1.3.2
-* Upgrade `google_mobile_ads`
+* Upgrade `google_mobile_ads` and `app_tracking_transparency`
