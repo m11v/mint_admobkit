@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: app_tracking_transparency
-      sha256: "7b011da3165ebb5a2f93d19da22e43a94b45bb6471c825b7d163b30eff937d30"
+      sha256: "64d9745931e565790abdea91b518ac8dc3cebe6d0d0aaf7119343271b983259a"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.5"
+    version: "2.0.6"
   async:
     dependency: transitive
     description:
@@ -95,10 +95,10 @@ packages:
     dependency: transitive
     description:
       name: google_mobile_ads
-      sha256: f07d4e2ebf56181e8dd18ee810607e84aeac8add5251bb44c1c886af47ff021a
+      sha256: e2d18992d30b2be77cb6976b931112fc3c4612feffb5eb7a8b036bd7a64934da
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.0"
+    version: "5.1.0"
   leak_tracker:
     dependency: transitive
     description:
