@@ -27,3 +27,6 @@
 
 ## 1.3.4
 * Upgrade packages.
+
+## 1.3.5
+* Upgrade dependencies.
