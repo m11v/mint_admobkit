@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'mint_admobkit.dart';
+import '../mint_admobkit.dart';
 
 /// The widget to show a banner ad
 

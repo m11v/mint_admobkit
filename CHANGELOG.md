@@ -33,3 +33,6 @@
 
 ## 1.3.6
 * Upgrade dependencies.
+
+## 1.3.7
+* Refactor code folder.

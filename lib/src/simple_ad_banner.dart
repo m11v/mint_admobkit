@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import 'mint_admobkit.dart';
+import '../mint_admobkit.dart';
 
 /// The widget to show a banner ad
 class SimpleAdBanner extends StatefulWidget {
