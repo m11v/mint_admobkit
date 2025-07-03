@@ -3,7 +3,7 @@ description: The flutter package including a set of AdMob integration utils for 
 homepage: https://github.com/m11v/mint_admobkit
 repository: https://github.com/m11v/mint_admobkit
 
-version: 1.3.6
+version: 1.3.7
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
